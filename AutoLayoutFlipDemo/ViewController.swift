@@ -9,17 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet weak var viewA: UILabel!
+  @IBOutlet weak var viewB: UILabel!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+  @IBAction func handleTap(sender: AnyObject) {
+    UIView.transitionFromView(self.viewA,
+      toView: self.viewB,
+      duration: NSTimeInterval(0.6),
+      options: .TransitionFlipFromLeft | UIViewAnimationOptions.ShowHideTransitionViews,
+      completion: nil)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
